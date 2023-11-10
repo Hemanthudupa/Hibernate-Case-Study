@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean class="Hibenrate.Projects.CartSerbice.CartService"
+		id="service" autowire="byType">
+	</bean>
+
+	<!-- constructor variable type name we have to given here and the ref having 
+		DAO id -->
+	<bean id="product"
+		class="Hibernate_Projects.Products.ProductDAO.ProductDAO">
+	</bean>
+	<bean id="cartdao" class="Hibernate.Projects.CartDAO.CartDAO"></bean>
+	<bean id="productdao" class="Hibernate_Projects.Products.ProductService.ProductService"></bean>
+	<bean id="app" class="Hibernate_Projects.Products.App" autowire="byType"></bean>
+</beans>
